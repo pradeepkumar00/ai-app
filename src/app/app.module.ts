@@ -3,16 +3,28 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { ImageComponent } from './components/image/image.component';
+import { OpenAIApi } from 'openai';
+ 
+import { FirebaseService } from './service/firebase.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChatComponent,
+    ImageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    
   ],
-  providers: [],
+  providers: [
+    OpenAIApi,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

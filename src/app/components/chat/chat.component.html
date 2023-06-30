@@ -1,0 +1,14 @@
+<div class="chat com">
+    <div class="msg-dash">
+        <div class="tab" *ngFor="let chat of chatArray">
+            <div class="left coms" *ngIf="chat.type==1">{{chat.value.content}}</div>
+            <div class="right coms" *ngIf="chat.type==0">{{chat.value}}</div>
+        </div>
+    </div>
+    <div class="bottom com">
+        <div class="input com">
+            <textarea [(ngModel)]="text"></textarea>
+        </div>
+        <div class="send com" (click)="send()">Send</div>
+    </div>
+</div>
